@@ -84,6 +84,7 @@ spec:
       affinity:
         nodeAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
             preference:
                 matchExpressions:
                 - key: app
@@ -98,6 +99,7 @@ spec:
                 operator: In
                 values:
                 - todoapp
+            topologyKey: "kubernetes.io/hostname"
       volumes:
       - name: data
         persistentVolumeClaim:
