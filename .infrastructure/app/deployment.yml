@@ -86,15 +86,15 @@ spec:
           preferredDuringSchedulingIgnoredDuringExecution:
           - weight: 100
             preference:
-                matchExpressions:
-                - key: app
-                  operator: In
-                  values:
-                  - todoapp
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - todoapp
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
           - labelSelector:
-              matchExpressions:
+              matchLabels:
               - key: app
                 operator: In
                 values:
